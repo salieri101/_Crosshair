@@ -1,9 +1,9 @@
 
-class 'CrossHair'
-function CrossHair:__init()
+class 'CrossHairSwitch'
+function CrossHairSwitch:__init()
 Events:Subscribe( "PlayerChat", self, self.ChatMessage )
 end
-function CrossHair:ChatMessage(args)
+function CrossHairSwitch:ChatMessage(args)
     local msg = args.text
     local player = args.player
     
@@ -19,16 +19,16 @@ function CrossHair:ChatMessage(args)
         table.insert(cmdargs, word)
     end
     
-    if ( cmdargs[1] == "/crh1on" ) then
+    if ( cmdargs[1] == "/crh2on" ) then
 
-        Network:Send( player, "CrossHairFunction")
+        Network:Send( player, "CrossHairSwitchFunction")
         --player:SetModelId(15)
 		return false
     end    
     return false
 end
 
-local CrossHair = CrossHair()
+local CrossHairSwitch = CrossHairSwitch()
 
 
 

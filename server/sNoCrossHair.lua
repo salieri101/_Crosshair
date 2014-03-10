@@ -19,7 +19,7 @@ function NoCrossHair:ChatMessage(args)
         table.insert(cmdargs, word)
     end
     
-    if ( cmdargs[1] == "/nocrh" ) then
+    if ( cmdargs[1] == "/crh1off" ) then
 
         Network:Send( player, "NoCrossHairFunction")
         --player:SetModelId(15)
